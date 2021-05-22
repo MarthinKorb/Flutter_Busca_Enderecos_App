@@ -1,9 +1,16 @@
 import 'dart:async';
 
-import 'package:dio/dio.dart';
 import 'package:flutter_app/modules/adress/infra/model/adress.dart';
+import 'package:flutter_app/modules/adress/infra/repositories/adress_repository.dart';
+import 'package:flutter_app/modules/adress/repositories/i_adress_repository.dart';
 
 class MyHomeBloc {
+  IAdressRepository adressRepository;
+  // ignore: close_sinks
+  MyHomeBloc({IAdressRepository adressRepository}) {
+    this.adressRepository = AdressRepository();
+  }
+
   // ignore: close_sinks
   final StreamController<String> _streamController =
       StreamController.broadcast();
@@ -14,10 +21,7 @@ class MyHomeBloc {
       .where((cep) => cep.length > 7)
       .asyncMap((cep) => _serachAdress(cep));
 
-  String url(String cep) => 'https://viacep.com.br/ws/$cep/json/';
-
   Future<Adress> _serachAdress(String cep) async {
-    Response response = await Dio().get(url(cep));
-    return Adress.fromJson(response.data);
+    return await adressRepository.find(cep);
   }
 }
