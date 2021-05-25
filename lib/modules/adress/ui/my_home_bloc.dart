@@ -6,7 +6,6 @@ import 'package:flutter_app/modules/adress/repositories/i_adress_repository.dart
 
 class MyHomeBloc {
   IAdressRepository adressRepository;
-  // ignore: close_sinks
   MyHomeBloc({IAdressRepository adressRepository}) {
     this.adressRepository = AdressRepository();
   }

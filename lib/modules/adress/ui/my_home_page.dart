@@ -17,7 +17,7 @@ class _SearchAdressPageState extends State<SearchAdressPage> {
       appBar: AppBar(
         title: Text(
           'Buscador de Endereços',
-          style: GoogleFonts.robotoCondensed(fontSize: 24),
+          style: GoogleFonts.abel(fontSize: 24),
         ),
       ),
       body: Column(
@@ -25,7 +25,8 @@ class _SearchAdressPageState extends State<SearchAdressPage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
-              style: GoogleFonts.amarante(fontSize: 16),
+              style: GoogleFonts.abel(fontSize: 16),
+              keyboardType: TextInputType.number,
               maxLength: 8,
               onChanged: (cep) {
                 _bloc.input.add(cep);
@@ -56,9 +57,11 @@ class _SearchAdressPageState extends State<SearchAdressPage> {
                         'Logradouro: ${adress?.logradouro ?? '--'}'),
                     _buildContainer(
                         'Complemento: ${adress?.complemento ?? '--'}'),
-                    _buildContainer('IBGE: ${adress?.ibge ?? '--'}'),
+                    _buildContainer(
+                        'Localidade: ${adress?.localidade ?? '--'}'),
                     _buildContainer('Estado: ${adress?.uf ?? '--'}'),
                     _buildContainer('DDD: ${adress?.ddd ?? '--'}'),
+                    _buildContainer('IBGE: ${adress?.ibge ?? '--'}'),
                   ],
                 ),
               );
@@ -80,7 +83,7 @@ class _SearchAdressPageState extends State<SearchAdressPage> {
       ),
       child: Text(
         text,
-        style: GoogleFonts.amarante(fontSize: 18),
+        style: GoogleFonts.abel(fontSize: 18),
       ),
     );
   }
