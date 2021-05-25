@@ -11,7 +11,7 @@ Aplicação que permite você buscar informações de um endereço, apenas infor
 ---
 
 <p align="center" border-radius="4px">
-<img src=".github/exp1.png" width=800">
+<img src=".github/exp1.png" width=400">
 </p>
 
 ---
