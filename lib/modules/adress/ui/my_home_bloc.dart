@@ -18,9 +18,9 @@ class MyHomeBloc {
 
   Stream<Adress> get output => _streamController.stream
       .where((cep) => cep.length > 7)
-      .asyncMap((cep) => _serachAdress(cep));
+      .asyncMap((cep) => _searchAdress(cep));
 
-  Future<Adress> _serachAdress(String cep) async {
+  Future<Adress> _searchAdress(String cep) async {
     return await adressRepository.find(cep);
   }
 }
