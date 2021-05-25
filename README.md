@@ -8,6 +8,15 @@ Aplicação que permite você buscar informações de um endereço, apenas infor
 
 #### Flutter
 
+### Gerenciamento de Estado:
+
+#### BloC
+
+
+### Api utilizada para consultas:
+
+#### ViaCEP: https://viacep.com.br/
+
 ---
 
 <p align="center" border-radius="4px">
@@ -24,7 +33,7 @@ Clone esse repositório rodando o comando:
 
 ---
 
-# Sobre o ## Flutter
+# Sobre o Flutter
 
 É um Framework de Dart para construir aplicações para a plataforma Android e Ios.
 
